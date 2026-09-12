@@ -38,6 +38,3 @@ def chunk_documents(
             })
 
     return chunks
-            })
-
-    return chunks    
