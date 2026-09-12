@@ -1,7 +1,13 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+from config import CHUNK_SIZE, CHUNK_OVERLAP
 
-def chunk_documents(documents, chunk_size=1000, chunk_overlap=200):
+
+def chunk_documents(
+    documents,
+    chunk_size=CHUNK_SIZE,
+    chunk_overlap=CHUNK_OVERLAP
+):
     """
     Split loaded documents into smaller chunks for the RAG pipeline.
 
@@ -29,6 +35,9 @@ def chunk_documents(documents, chunk_size=1000, chunk_overlap=200):
                 "content": text,
                 "source": document["source"],
                 "chunk_id": index
+            })
+
+    return chunks
             })
 
     return chunks    
