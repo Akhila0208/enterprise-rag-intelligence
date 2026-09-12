@@ -1,4 +1,5 @@
-def create_retriever(vector_store, k=4):
+from config import TOP_K
+def create_retriever(vector_store, k=TOP_K):
     """
     Create a retriever for semantic search over the vector store.
 
