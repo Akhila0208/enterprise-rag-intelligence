@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# AWS credentials
+.aws/
+credentials
+
+# FAISS indexes
+faiss_index/
+*.faiss
+*.pkl
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and test artifacts
+*.log
+.pytest_cache/
+.coverage
+
+# Local project data
+data/
