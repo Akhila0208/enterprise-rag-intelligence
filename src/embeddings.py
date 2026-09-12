@@ -1,7 +1,7 @@
 from langchain_aws import BedrockEmbeddings
+from config import AWS_REGION, EMBEDDING_MODEL_ID
 
-
-def create_embedding_model(region_name="us-east-1"):
+def create_embedding_model(region_name=AWS_REGION):
     """
     Create an Amazon Bedrock embedding model for the RAG pipeline.
 
@@ -14,7 +14,7 @@ def create_embedding_model(region_name="us-east-1"):
 
     embeddings = BedrockEmbeddings(
         region_name=region_name,
-        model_id="amazon.titan-embed-text-v2:0"
+        model_id=EMBEDDING_MODEL_ID
     )
 
     return embeddings
