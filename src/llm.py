@@ -1,7 +1,8 @@
 from langchain_aws import ChatBedrock
+from config import AWS_REGION, LLM_MODEL_ID
 
 
-def create_llm(region_name="us-east-1"):
+def create_llm(region_name=AWS_REGION):
     """
     Create the Amazon Bedrock LLM used for RAG answer generation.
 
@@ -13,7 +14,7 @@ def create_llm(region_name="us-east-1"):
     """
 
     llm = ChatBedrock(
-        model_id="amazon.nova-pro-v1:0",
+        model_id=LLM_MODEL_ID,
         region_name=region_name,
         model_kwargs={
             "temperature": 0.1,
