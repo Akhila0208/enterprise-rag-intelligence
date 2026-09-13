@@ -67,6 +67,11 @@ RAG response:
 ```text
 Employees can work remotely up to three days per week.
 ```
+## RAG Pipeline Output
+
+Below is an example of the RAG pipeline running successfully with Amazon Bedrock:
+
+![RAG Pipeline Output](RAG.jpg)
 
 The answer is generated using context retrieved from the enterprise policy documents.
 
