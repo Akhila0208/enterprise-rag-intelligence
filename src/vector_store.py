@@ -1,4 +1,4 @@
-rom langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 
 
 def create_vector_store(chunks, embedding_model):
