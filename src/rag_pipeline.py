@@ -65,6 +65,20 @@ Question:
 Answer:
 """
 
-    response = llm.invoke(prompt)
+response = llm.invoke(prompt)
 
-    return response.content
+sources = []
+for document in documents:
+    source = document.metadata.get("source", "Unknown source")
+    chunk_id = document.metadata.get("chunk_id", "Unknown chunk")
+    citation = f"{source} — Chunk {chunk_id}"
+
+    if citation not in sources:
+        sources.append(citation)
+
+source_text = "\n".join(
+    f"[{index}] {source}"
+    for index, source in enumerate(sources, start=1)
+)
+
+return f"{response.content}\n\nSOURCES:\n{source_text}"
