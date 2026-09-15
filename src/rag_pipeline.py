@@ -81,4 +81,4 @@ source_text = "\n".join(
     for index, source in enumerate(sources, start=1)
 )
 
-return f"{response.content}\n\nSOURCES:\n{source_text}"
+return response.content + \n\nSOURCES:\n" + source_text
