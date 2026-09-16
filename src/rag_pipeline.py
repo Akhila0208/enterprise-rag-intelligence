@@ -65,20 +65,19 @@ Question:
 Answer:
 """
 
-response = llm.invoke(prompt)
+    response = llm.invoke(prompt)
 
-sources = []
-for document in documents:
-    source = document.metadata.get("source", "Unknown source")
-    chunk_id = document.metadata.get("chunk_id", "Unknown chunk")
-    citation = f"{source} — Chunk {chunk_id}"
+    sources = []
+    for document in documents:
+        source = document.metadata.get("source", "Unknown source")
+        chunk_id = document.metadata.get("chunk_id", "Unknown chunk")
+        citation = f"{source} — Chunk {chunk_id}"
 
-    if citation not in sources:
-        sources.append(citation)
+        if citation not in sources:
+            sources.append(citation)
 
-source_text = "\n".join(
-    f"[{index}] {source}"
-    for index, source in enumerate(sources, start=1)
-)
-
-return response.content + \n\nSOURCES:\n" + source_text
+    source_text = "\n".join(
+        f"[{index}] {source}"
+        for index, source in enumerate(sources, start=1)
+    )
+    return response.content + "\n\nSOURCES:\n" + source_text
