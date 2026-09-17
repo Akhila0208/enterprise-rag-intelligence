@@ -99,3 +99,12 @@ python src/main.py --data data --question "How many days per week can employees 
 - Configurable retrieval settings
 - Grounded LLM responses
 - Modular Python architecture
+
+## Evaluation
+
+The RAG pipeline includes an automated evaluation suite to validate both answer accuracy and source grounding.
+
+Run the evaluation:
+
+```bash
+python evaluation/run_evaluation.py
