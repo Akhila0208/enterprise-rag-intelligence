@@ -19,7 +19,7 @@ for i, test in enumerate(test_cases, start=1):
 
     output = result.stdout + result.stderr
 
-    answer_pass = "three days per week" in output.lower()
+    answer_pass = all(word in output.lower() for word in expected_answer.lower().split())
     source_pass = expected_source.lower() in output.lower()
     test_pass = answer_pass and source_pass
 

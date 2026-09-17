@@ -1,7 +1,17 @@
 [
   {
     "question": "How many days per week can employees work remotely?",
-    "expected_answer": "Employees may work remotely up to three days per week.",
+    "expected_answer": "three days per week",
+    "expected_source": "company_policy.json"
+  },
+  {
+    "question": "What approval is required before accessing confidential company information?",
+    "expected_answer": "manager approval",
+    "expected_source": "company_policy.json"
+  },
+  {
+    "question": "What network should employees use when working remotely?",
+    "expected_answer": "approved secure network",
     "expected_source": "company_policy.json"
   }
 ]
