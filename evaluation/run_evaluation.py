@@ -19,7 +19,7 @@ for i, test in enumerate(test_cases, start=1):
 
     output = result.stdout + result.stderr
 
-    answer_pass = all(word in output.lower() for word in expected_answer.lower().split())
+    answer_pass = expected_answer.lower() in output.lower()
     source_pass = expected_source.lower() in output.lower()
     test_pass = answer_pass and source_pass
 

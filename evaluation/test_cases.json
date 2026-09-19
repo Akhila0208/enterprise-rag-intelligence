@@ -13,5 +13,20 @@
     "question": "What network should employees use when working remotely?",
     "expected_answer": "approved secure network",
     "expected_source": "company_policy.json"
+  },
+  {
+    "question": "What authentication method must employees use when accessing company systems?",
+    "expected_answer": "multi-factor authentication",
+    "expected_source": "it_security_policy.json"
+  },
+  {
+    "question": "What should employees do with company devices when left unattended?",
+    "expected_answer": "lock the company devices",
+    "expected_source": "it_security_policy.json"
+  },
+  {
+    "question": "Who should employees contact regarding password requirements?",
+    "expected_answer": "IT security team",
+    "expected_source": "it_security_policy.json"
   }
 ]
