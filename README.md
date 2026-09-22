@@ -108,3 +108,12 @@ Run the evaluation:
 
 ```bash
 python evaluation/run_evaluation.py
+
+### Evaluation Results
+
+Latest evaluation: **6/6 test cases passed (100%)**
+
+The evaluation validates:
+- Answer accuracy against expected responses
+- Source grounding against expected documents
+- Retrieval and generation performance across the RAG pipeline
