@@ -12,36 +12,23 @@ Production-style Agentic RAG system built with Amazon Bedrock, Titan embeddings,
 - Modular enterprise-style GenAI architecture
 
 ## Architecture
+The following diagram shows the high-level flow of the Enterprise Agentic RAG system. A user query is first analyzed by the agent router, which decides whether to generate a grounded RAG answer or retrieve direct supporting sources.
 
-```text
-User Query
-    |
-    v
-Agent Router
-    |
-    +-------------------------+
-    |                         |
-    v                         v
-Grounded RAG             Source Retrieval
-    |                         |
-    v                         v
-FAISS Retrieval          Evidence / Chunks
-    |
-    v
-Amazon Bedrock
-    |
-    v
-Grounded Answer + Sources
+![Enterprise Agentic RAG Architecture](./enterprise_agentic_rag_architecture.png)
 
+### Flow Summary
+1. **User Query** enters the system
+2. **Agent Router** decides the best path based on user intent
+3. If the query needs an answer, it goes through **Grounded RAG**
+4. **FAISS Retrieval** finds relevant chunks from indexed documents
+5. **Amazon Bedrock** generates the grounded response
+6. If the user asks for evidence, the system performs **Source Retrieval**
+7. The final output returns either a **Grounded Answer + Sources** or **Evidence/Chunks**
 ## Overview
 
 This project demonstrates how enterprise documents can be transformed into searchable knowledge and used by a Large Language Model (LLM) to generate grounded answers.
 
 The pipeline loads documents, splits them into chunks, generates vector embeddings, stores them in FAISS, retrieves relevant context, and sends that context to an Amazon Bedrock model to generate the final response.
-
-## Architecture
-
-Documents → Chunking → Embeddings → FAISS Vector Store → Retriever → Amazon Bedrock LLM → Response
 
 ## Technologies
 
