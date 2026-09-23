@@ -13,10 +13,6 @@ Production-style Agentic RAG system built with Amazon Bedrock, Titan embeddings,
 
 ## Architecture
 
-# Enterprise RAG Intelligence
-
-An end-to-end Retrieval-Augmented Generation (RAG) application built with Amazon Bedrock, LangChain, and FAISS.
-
 ## Overview
 
 This project demonstrates how enterprise documents can be transformed into searchable knowledge and used by a Large Language Model (LLM) to generate grounded answers.
