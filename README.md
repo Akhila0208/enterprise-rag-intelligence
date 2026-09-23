@@ -117,3 +117,41 @@ The evaluation validates:
 - Answer accuracy against expected responses
 - Source grounding against expected documents
 - Retrieval and generation performance across the RAG pipeline
+
+## Agentic RAG Architecture
+
+This project implements an enterprise-style Agentic Retrieval-Augmented Generation system using Amazon Bedrock and FAISS.
+
+### Key Capabilities
+
+- Amazon Bedrock for LLM inference and Titan embeddings
+- FAISS semantic vector retrieval
+- Dynamic agent routing based on user intent
+- Grounded RAG answer generation
+- Direct source/evidence retrieval
+- Source attribution for traceability
+- Structured interaction logging and observability
+- Evaluation framework for retrieval and response quality
+- Modular ingestion, chunking, embeddings, retrieval, and generation layers
+
+## Agent Routing Flow
+
+```text
+User Query
+    |
+    v
+Agent Router
+    |
+    +-------------------------+
+    |                         |
+    v                         v
+Grounded RAG             Source Retrieval
+    |                         |
+    v                         v
+FAISS Retrieval          Evidence/Chunks
+    |
+    v
+Amazon Bedrock
+    |
+    v
+Grounded Answer + Sources

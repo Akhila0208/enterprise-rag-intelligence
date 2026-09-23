@@ -32,3 +32,8 @@ faiss_index/
 
 # Local project data
 data/
+
+# Runtime artifacts
+logs/*.jsonl
+__pycache__/
+*.pyc

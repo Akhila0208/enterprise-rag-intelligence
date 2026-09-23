@@ -2,8 +2,9 @@ import argparse
 import logging
 from pathlib import Path
 
-from rag_pipeline import build_rag_pipeline, ask_question
-
+from rag_pipeline import build_rag_pipeline
+from agent_router import run_agent
+from observability import log_rag_interaction
 
 logging.basicConfig(
     level=logging.INFO,
@@ -53,16 +54,21 @@ def main():
     logger.info("RAG pipeline initialized successfully.")
 
     if args.question:
-        answer = ask_question(
+        result = run_agent(
             retriever,
             llm,
             args.question
         )
+        answer = result.get("answer", str(result.get("results", "")))
+        print(f"Agent route: {result['route']}")
+        print(f"Reason: {result['reason']}")
 
+        sources = [line.split("] ", 1)[-1].split(" - Chunk")[0] for line in answer.splitlines() if line.startswith("[")]
+        log_rag_interaction(args.question, answer, sources)
+     
         print("\n================ RAG RESPONSE ================\n")
         print(answer)
         print("\n==============================================\n")
-
     else:
         print("\nEnterprise RAG Intelligence")
         print("Type 'exit' to stop.\n")
@@ -78,14 +84,27 @@ def main():
                 continue
 
             try:
-                answer = ask_question(
-                    retriever,
-                    llm,
-                    question
-                )
+                result = run_agent(retriever, llm, question)
 
-                print("\nAnswer:\n")
-                print(answer)
+                print(f"\nAgent route: {result['route']}")
+
+                print(f"Reason: {result['reason']}")
+
+
+                if "answer" in result:
+
+                    print("\nAnswer:\n")
+
+                    print(result["answer"])
+
+                else:
+
+                    print("\nRetrieved sources:\n")
+
+                    for item in result["results"]:
+
+                        print(item)
+
                 print()
 
             except Exception as error:
