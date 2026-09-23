@@ -13,6 +13,26 @@ Production-style Agentic RAG system built with Amazon Bedrock, Titan embeddings,
 
 ## Architecture
 
+```text
+User Query
+    |
+    v
+Agent Router
+    |
+    +-------------------------+
+    |                         |
+    v                         v
+Grounded RAG             Source Retrieval
+    |                         |
+    v                         v
+FAISS Retrieval          Evidence / Chunks
+    |
+    v
+Amazon Bedrock
+    |
+    v
+Grounded Answer + Sources
+
 ## Overview
 
 This project demonstrates how enterprise documents can be transformed into searchable knowledge and used by a Large Language Model (LLM) to generate grounded answers.
