@@ -1,5 +1,20 @@
 # Enterprise RAG Intelligence
 
+Production-style Agentic RAG system built with Amazon Bedrock, Titan embeddings, FAISS, LangChain, and Python.
+
+## What This Project Demonstrates
+
+- Agentic routing between grounded RAG generation and direct source retrieval
+- Amazon Titan embeddings with FAISS semantic search
+- Source-grounded answers with traceability
+- RAG observability and structured interaction logging
+- Retrieval and response evaluation
+- Modular enterprise-style GenAI architecture
+
+## Architecture
+
+# Enterprise RAG Intelligence
+
 An end-to-end Retrieval-Augmented Generation (RAG) application built with Amazon Bedrock, LangChain, and FAISS.
 
 ## Overview
