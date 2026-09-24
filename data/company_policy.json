@@ -1,0 +1,10 @@
+{
+  "title": "Company Remote Work and Information Access Policy",
+  "remote_work": {
+    "allowed_days": "Employees may work remotely three days per week.",
+    "network_requirement": "Employees working remotely must use an approved secure network."
+  },
+  "confidential_information": {
+    "approval_required": "Manager approval is required before accessing confidential company information."
+  }
+}

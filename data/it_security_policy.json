@@ -1,0 +1,12 @@
+{
+  "title": "IT Security Policy",
+  "authentication": {
+    "requirement": "Employees must use multi-factor authentication when accessing company systems."
+  },
+  "device_security": {
+    "unattended_devices": "Employees must lock company devices when they are left unattended."
+  },
+  "phishing": {
+    "reporting": "Employees should report suspected phishing emails to the IT security team."
+  }
+}
