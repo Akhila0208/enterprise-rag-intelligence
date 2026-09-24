@@ -31,7 +31,9 @@ faiss_index/
 .coverage
 
 # Local project data
-data/
+data/*
+!data/company_policy.json
+!data/it_security_policy.json
 
 # Runtime artifacts
 logs/*.jsonl
